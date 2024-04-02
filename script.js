@@ -70,7 +70,7 @@ projects.addEventListener('click',()=>{
     R_left.style.display="block";
 });
 let selectedFile;
-file.addEventListener('change',(event)=>{
+file.addEventListener('input',(event)=>{
     P_photo.innerHTML='';
     Profile_photo.innerHTML="";
     // Create a FileReader object
@@ -80,7 +80,7 @@ file.addEventListener('change',(event)=>{
     reader.onload = function(event) {
         // Set the src attribute of the image element to the data URL
         src = event.target.result;
-        console.log(src);
+        // console.log(src);
         
         Profile_photo.innerHTML+=`<img src=${src}>`;
     };
@@ -90,7 +90,7 @@ file.addEventListener('change',(event)=>{
     // Read the selected file as a data URL
     if (selectedFile) {
         reader.readAsDataURL(selectedFile);
-        count=1;
+        // count=1;
     }
     file.value='';
 })
@@ -152,6 +152,9 @@ document.querySelector(".skill1").addEventListener('input',(ele)=>{
         skilldata1.style.display="block";
         skilldata1.innerHTML=`<li>${ele.target.value}</li>`; 
     }
+    setTimeout(() => {
+        skillset.push(document.querySelector(".skill1").value);
+    }, 3000);
 });
 document.querySelector(".skill2").addEventListener('input',(ele)=>{
     if(ele.target.value.length===0)
@@ -162,6 +165,9 @@ document.querySelector(".skill2").addEventListener('input',(ele)=>{
         skilldata2.style.display="block";
         skilldata2.innerHTML=`<li>${ele.target.value}</li>`; 
     }
+    setTimeout(() => {
+        skillset.push(document.querySelector(".skill2").value);
+    }, 3000);
 });
 document.querySelector(".skill3").addEventListener('input',(ele)=>{
     if(ele.target.value.length===0)
@@ -172,6 +178,9 @@ document.querySelector(".skill3").addEventListener('input',(ele)=>{
         skilldata3.style.display="block";
         skilldata3.innerHTML=`<li>${ele.target.value}</li>`; 
     }
+    setTimeout(() => {
+        skillset.push(document.querySelector(".skill3").value);
+    }, 3000);
 });
 document.querySelector(".skill4").addEventListener('input',(ele)=>{
     if(ele.target.value.length===0)
@@ -182,6 +191,9 @@ document.querySelector(".skill4").addEventListener('input',(ele)=>{
         skilldata4.style.display="block";
         skilldata4.innerHTML=`<li>${ele.target.value}</li>`; 
     } 
+    setTimeout(() => {
+        skillset.push(document.querySelector(".skill4").value);
+    }, 3000);
 });
 document.querySelector(".skill5").addEventListener('input',(ele)=>{
     if(ele.target.value.length===0)
@@ -192,6 +204,9 @@ document.querySelector(".skill5").addEventListener('input',(ele)=>{
         skilldata5.style.display="block";
         skilldata5.innerHTML=`<li>${ele.target.value}</li>`; 
     }
+    setTimeout(() => {
+        skillset.push(document.querySelector(".skill5").value);
+    }, 3000);
 });
 document.querySelector(".skill6").addEventListener('input',(ele)=>{
     if(ele.target.value.length===0)
@@ -202,6 +217,9 @@ document.querySelector(".skill6").addEventListener('input',(ele)=>{
         skilldata6.style.display="block";
         skilldata6.innerHTML=`<li>${ele.target.value}</li>`; 
     }
+    setTimeout(() => {
+        skillset.push(document.querySelector(".skill6").value);
+    }, 3000);
 });
 
 // experience portion 
@@ -397,19 +415,12 @@ let Jobs_recommended=document.querySelector(".Jobs_recommended");
 let press=document.querySelector(".press");
 press.addEventListener('click',getjobs);
 function getjobs(){
-    skillset.push(document.querySelector(".skill1").value);
-    skillset.push(document.querySelector(".skill2").value);
-    skillset.push(document.querySelector(".skill3").value);
-    skillset.push(document.querySelector(".skill4").value);
-    skillset.push(document.querySelector(".skill5").value);
-    skillset.push(document.querySelector(".skill6").value);
-    console.log(skillset);
     let jobs=[];
 let url;
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '8179e9b7f4msh26459e568c8c34dp16ba99jsnfd23b1104681',
+		'X-RapidAPI-Key': 'f0810dbca3mshd094a9f09e099dep17fa06jsn2aee572d9e6e',
 		'X-RapidAPI-Host': 'jobs-api14.p.rapidapi.com'
 	}
 };
@@ -435,7 +446,7 @@ try {
             <p>${elem.employmentType}
             <p>${elem.description}</p>
             <br>
-            <a href="elem.jobProviders[0].url">Apply Now</a>`;
+            <a href=${elem.jobProviders[0].url}>Apply Now</a>`;
             div.style.border="2px solid black";
             div.style.padding="15px";
             div.style.margin="10px";
@@ -455,9 +466,13 @@ try {
 	console.error(error);
 }
 }
-skillset.forEach((ele)=>{
+// console.log(skillset);
+const uniqueArray = [...new Set(skillset)];
+uniqueArray.forEach((ele)=>{
+    console.log(ele);
     if(ele)
     {
+        // console.log("done");
         url = `https://jobs-api14.p.rapidapi.com/list?query=${ele}&location=India`;
        check();
     }
@@ -472,6 +487,7 @@ const printPdf = document.querySelector("#downloadbtn");
 printPdf.addEventListener("click", ()=>{
     const element = document.querySelector('.right_right');
     element.style.width="100%";
+    element.style.margin="0 auto";
 html2pdf(element, {
     margin: 10,
     filename: "resume.pdf",
@@ -544,30 +560,35 @@ if(count==0)
 }
 if(count==1)
 {
+    header.style.color="white";
     header.style.backgroundColor="green";
     experience_detail.style.display="block";
     R_left.appendChild(experience_detail);
 }
 if(count==2)
 {
+    experience.style.color="white";
     experience.style.backgroundColor="green";
     Education_detail.style.display="block";
     R_left.appendChild(Education_detail);
 }
 if(count==3)
 {
+    education.style.color="white";
     education.style.backgroundColor="green";
     Skills_detail.style.display="block";
     R_left.appendChild(Skills_detail);
 }
 if(count==4)
 {
+    skills.style.color="white";
     skills.style.backgroundColor="green";
     Summary_detail.style.display="block";
     R_left.appendChild(Summary_detail);
 }
 if(count==5)
 {
+    summary.style.color="white";
     summary.style.backgroundColor="green";
     Project_detail.style.display="block";
     R_left.appendChild(Project_detail);
@@ -575,6 +596,7 @@ if(count==5)
 if(count==6)
 {
     R_left.innerHTML="Click finalise to preview the resume";
+    projects.style.color="white";
     projects.style.backgroundColor="green";
 }
 }

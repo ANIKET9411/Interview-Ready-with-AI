@@ -28,7 +28,8 @@ nav h1{
     padding:8px;
     text-align: center;
     border-bottom-left-radius: 10px;
-    margin:10px;
+    margin:15px;
+    font-weight: bold;
 }
 .right{
     display:flex;
@@ -37,9 +38,9 @@ nav h1{
     height:100%;
 }
 .right_left{
-    padding:3%;
+    padding:0 3%;
     width:34%;
-    height:88%;
+    height:94%;
     overflow: scroll;
 
 }
@@ -159,4 +160,35 @@ textarea{
     outline: none;
     border: 1px solid black;
     background-color: white;
+    font-weight: bold;
+}
+.prev:hover{
+    background-color: #212D59;
+    color:white;
+    
+}
+.heading{
+    font-size: 31px;
+}
+.heading_para{
+    font-size: 20px;
+}
+.new_feature{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding:10px;
+    margin-top: 5rem;
+    border-top: 5px solid white;
+}
+.new_feature button {
+    width: 44.5%;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 50px;
+}
+.new_feature button:hover{
+    background-color: #212D59;
+    color:white;
+    border: 2px solid white;
 }
