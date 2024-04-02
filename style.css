@@ -8,7 +8,7 @@ body{
 .container{
     width:100%;
     display: flex;
-    height:100vh;
+    /* height:100vh; */
 }
 .left{
     width:15%;
@@ -36,19 +36,28 @@ nav h1{
     width:85%;
     /* background-color: blue; */
     height:100%;
+    justify-content: space-between;
 }
 .right_left{
     padding:0 3%;
-    width:34%;
-    height:94%;
+    width:94%;
+    min-height:94%;
     overflow: scroll;
 
 }
 ::-webkit-scrollbar{
     display: none;
 }
-.experience_detail,.Education_detail,.Skills_detail,.Project_detail,.Summary_detail,.Jobs_recommended{
+.experience_detail,.Education_detail,.Skills_detail,.Project_detail,.Summary_detail,.Jobs_recommended,.enhancement_skill{
     display: none;
+}
+.Jobs_recommended{
+    width:100%;
+    height:inherit;
+}
+.enhancement_skill{
+    width:100%;
+    min-height: 100%;
 }
 .experience_detail,.Education_detail,.Skills_detail,.Project_detail,.Summary_detail button{
     padding:20px;
@@ -107,9 +116,9 @@ width:48%;
 
 /* right_right */
 .right_right{
-    width:60%;
+    width:100%;
     display:flex;
-    padding: 3% 0 0 0 ;
+    padding: 3% 0;
     /* height:97%; */
     overflow: scroll;
     /* background-color: blue; */
@@ -118,6 +127,7 @@ width:48%;
     padding:2%;
     width:37%;
     background-color: #EEE9DF;
+    min-height: 94vh;
     /* height:100%; */
 }
 .rrleft .Profile_photo{
@@ -191,4 +201,14 @@ textarea{
     background-color: #212D59;
     color:white;
     border: 2px solid white;
+}
+.main_right_right{
+    width:57%;
+    height: 99vh;
+    overflow-y: scroll;
+}
+.main_right_left{
+    width:40%;
+    height: 94vh;
+    overflow-y: scroll;
 }

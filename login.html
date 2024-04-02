@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login page</title>
+    <link rel="stylesheet" href="index_css.css">
+  </head>
+  <body>
+    
+    <nav>
+      <div class="nav_left"><a class="nav_left_inner" href="index.html">Resume Builder.</a></div>
+      <div class="nav_right">
+          <a href="signup.html">Sign Up</a>
+      </div>
+  </nav>
+  <main>
+      <div class="main_left">
+    <h1>Login</h1>
+          
+        <form action="./home.html" name="RegForm" onsubmit="return validateForm()">
+          <label for="EMail">Email-Id </label><br>
+          <input class="input_width" type="email" name="EMail" placeholder="a@gmail.com" />
+          <br>
+          <label for="Password">Password </label><br>
+          <input class="input_width" type="password" name="Password" placeholder="******" />
+          <br>
+          <input class="submit_btn" type="submit" value="Login" />
+        </form>
+      </div>
+      <div class="main_right"><img src="https://assets.zety.com/blobcontent/lp-exps/zty/ZTY3221/changeCV-image.png" alt=""></div>
+  </main>
+
+   
+
+    <script>
+        let users = JSON.parse(localStorage.getItem('userList'));
+        console.log(users);
+
+      function validateForm() {
+        var email = document.forms["RegForm"]["EMail"].value;
+        var password = document.forms["RegForm"]["Password"].value;
+
+        if (email == "") {
+          alert("Please enter the email");
+          return false;
+        }
+        if (password == "") {
+          alert("Please enter the password");
+          return false;
+        }
+        if(users.some(person=>(person.email === email && person.password === password))){
+            alert('Logged in successfully');
+            return true;
+        }else{
+            alert('user not found');
+            return false;
+        }
+      }
+    </script>
+  </body>
+</html>

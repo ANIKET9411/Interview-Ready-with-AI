@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="index_css.css">
+  </head>
+  <body>
+    <nav>
+      <div class="nav_left"><a class="nav_left_inner" href="index.html">Resume Builder.</a></div>
+      <div class="nav_right">
+          <a href="login.html">Login</a>
+      </div>
+  </nav>
+  <main>
+      <div class="main_left signup_main_left">
+          <h1>SIGN UP</h1>
+        <form action="login.html" name="RegForm" onsubmit="return validateForm()">
+          <label for="Name">Name:- </label>
+          <input class="input_width" type="text" name="Name"  placeholder="Your name" />
+          <br />
+          <label for="EMail">EmailId:- </label>
+          <input class="input_width" type="email" name="EMail" placeholder="a@gmail.com" />
+          <br>
+          <label for="Password">Password:- </label>
+          <input class="input_width" type="password" name="Password"  placeholder="******" />
+          <br />
+          <label for="Confrim">Confirm Password:- </label>
+          <input class="input_width" type="password" name="Confrim" placeholder="******" />
+          <br />
+    
+          <input class="submit_btn" type="submit" value="Register" name="Submit" class="input1"/>
+        </form>
+      </div>
+      <div class="main_right"><img src="https://assets.zety.com/blobcontent/lp-exps/zty/ZTY3221/changeCV-image.png" alt=""></div>
+  </main>
+
+    
+
+    <script src="./new_script.js"></script>
+  </body>
+</html>

@@ -32,6 +32,7 @@ header.addEventListener('click',()=>{
     
     R_left.appendChild(header_detail);
     R_left.style.display="block";
+    document.querySelector(".main_right_right").style.width="60%";
 });
 let scr;
 experience.addEventListener('click',()=>{
@@ -40,6 +41,7 @@ experience.addEventListener('click',()=>{
     experience_detail.style.display="block";
     R_left.appendChild(experience_detail);
     R_left.style.display="block";
+    document.querySelector(".main_right_right").style.width="60%";
 });
 education.addEventListener('click',()=>{
     count=2;
@@ -47,6 +49,7 @@ education.addEventListener('click',()=>{
     Education_detail.style.display="block";
     R_left.appendChild(Education_detail);
     R_left.style.display="block";
+    document.querySelector(".main_right_right").style.width="60%";
 });
 skills.addEventListener('click',()=>{
     count=3;
@@ -54,6 +57,7 @@ skills.addEventListener('click',()=>{
     Skills_detail.style.display="block";
     R_left.appendChild(Skills_detail);
     R_left.style.display="block";
+    document.querySelector(".main_right_right").style.width="60%";
 });
 summary.addEventListener('click',()=>{
     count=4;
@@ -61,6 +65,7 @@ summary.addEventListener('click',()=>{
     Summary_detail.style.display="block";
     R_left.appendChild(Summary_detail);
     R_left.style.display="block";
+    document.querySelector(".main_right_right").style.width="60%";
 });
 projects.addEventListener('click',()=>{
     count=5;
@@ -68,6 +73,7 @@ projects.addEventListener('click',()=>{
     Project_detail.style.display="block";
     R_left.appendChild(Project_detail);
     R_left.style.display="block";
+    document.querySelector(".main_right_right").style.width="60%";
 });
 let selectedFile;
 file.addEventListener('input',(event)=>{
@@ -411,6 +417,9 @@ document.querySelector(".prolink3").addEventListener('input',(ele)=>{
 document.querySelector(".prodesc3").addEventListener('input',(ele)=>{
     projectdescription3.innerText=`${ele.target.value}`; 
 });
+
+// job API 
+
 let Jobs_recommended=document.querySelector(".Jobs_recommended");
 let press=document.querySelector(".press");
 press.addEventListener('click',getjobs);
@@ -433,12 +442,15 @@ try {
     jobs.forEach((ele)=>{
         R_left.innerHTML="";
         Jobs_recommended.style.display="block";
+        R_left.style.display="block";
+        document.querySelector(".main_right_left").style.width="40%";
+        document.querySelector(".main_right_right").style.width="60%";
         ele.forEach((elem)=>{
             if(elem.description.length>70)
             {
                 elem.description=(elem.description).slice(0,150);
             }
-            elem.description=`${elem.description} <a href="#">see more</a>`;
+            elem.description=`${elem.description} <a href=${elem.jobProviders[0].url}>see more</a>`;
             let div=document.createElement("div");
             div.innerHTML=`<h2>${elem.title}</h2>
             <p>${elem.company}</p>
@@ -480,6 +492,65 @@ uniqueArray.forEach((ele)=>{
 }
 
 
+let enhancement_skill=document.querySelector(".enhancement_skill");
+let get_project=document.querySelector(".get_project");
+get_project.addEventListener('click',enhanceskill);
+function enhanceskill(){
+    let eskill=[];
+    let url;
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'ae1d78a41fmsh9899d0f9a032543p18ff35jsnca4aa0db0d6a',
+            'X-RapidAPI-Host': 'youtube-search14.p.rapidapi.com'
+        }
+    };
+async function check(){
+try {
+	const response = await fetch(url, options);
+	const result = await response.json();
+	console.log(result.items);
+    eskill.push(result.items);
+    eskill.forEach((ele)=>{
+        R_left.innerHTML="";
+        enhancement_skill.style.display="block";
+        R_left.style.display="block";
+        document.querySelector(".main_right_left").style.width="40%";
+        document.querySelector(".main_right_right").style.width="60%";
+        for(let i=0;i<3;i++)
+        {
+            let div=document.createElement("div");
+            div.innerHTML=`<a href=${ele[i].url}>${ele[i].url}</a>`;
+            div.style.margin="20px";
+            div.style.height="30px";
+            enhancement_skill.appendChild(div);
+            console.log(enhancement_skill);
+        }
+        // ele.forEach((elem)=>{
+            
+            
+        // })
+        R_left.appendChild(enhancement_skill);
+    })
+    
+} catch (error) {
+	console.error(error);
+    console.log("hello world!");
+}
+}
+// console.log(skillset);
+const uniqueArray = [...new Set(skillset)];
+uniqueArray.forEach((ele)=>{
+    console.log(ele);
+    if(ele)
+    {
+        // console.log("done");
+        url = `https://youtube-search14.p.rapidapi.com/search?q=${ele}projects&c=continuation_token`;
+       check();
+    }
+})
+}
+
 // download pdf 
 
 const printPdf = document.querySelector("#downloadbtn");
@@ -495,30 +566,21 @@ html2pdf(element, {
     html2canvas: { scale: 2 },
     jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
   });
-//   element.style.width="80%";
-});
+//   element.style.width="60%";
+setTimeout(() => {
+    
+    arrangewidth();
+}, 2000);
 
+  console.log("hello");
+});
+function arrangewidth(){
+    const element = document.querySelector('.right_right');
+    element.style.width="100%";
+}
 // print pdf 
 document.getElementById('printbtn').addEventListener('click', function() {
-    const content = document.querySelector('.right_right');
-  
-    // Create a new jsPDF instance
-    const pdf = new jsPDF();
-  
-    // Convert HTML to PDF
-    pdf.html(content, {
-      callback: function(pdf) {
-        // Open the PDF in a new window
-        const pdfDataUri = pdf.output('datauristring');
-        const newWindow = window.open();
-        newWindow.document.write('<iframe src="' + pdfDataUri + '" frameborder="0" style="width:100%; height:100vh;"></iframe>');
-        
-        // Once the PDF is fully loaded in the new window, trigger the print dialog
-        newWindow.document.getElementsByTagName('iframe')[0].onload = function() {
-          newWindow.print();
-        };
-      }
-    });
+    window.print();
   });
   
 
@@ -602,6 +664,7 @@ if(count==6)
 }
 document.querySelector(".preview").addEventListener('click',()=>{
     R_left.style.display="none";
-    R_right.style.margin="0 auto";
+    document.querySelector(".main_right_right").style.width="100%";
+    document.querySelector(".main_right_right").style.margin="0 auto";
     // R_right.style.backgroundColor="red";
 })
