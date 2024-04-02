@@ -1,0 +1,162 @@
+body{
+    padding :0;
+    margin:0;
+    width:100%;
+    height:100vh;
+    /* background-color: pink; */
+}
+.container{
+    width:100%;
+    display: flex;
+    height:100vh;
+}
+.left{
+    width:15%;
+    background-color: #212D59;
+    height: 100%;
+}
+nav h1{
+    color: white;
+    text-align: center;
+}
+.option_list{
+    text-align: center;
+}
+.option_list button{
+    width:45%;
+    /* height:30px; */
+    padding:8px;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    margin:10px;
+}
+.right{
+    display:flex;
+    width:85%;
+    /* background-color: blue; */
+    height:100%;
+}
+.right_left{
+    padding:3%;
+    width:34%;
+    height:88%;
+    overflow: scroll;
+
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.experience_detail,.Education_detail,.Skills_detail,.Project_detail,.Summary_detail,.Jobs_recommended{
+    display: none;
+}
+.experience_detail,.Education_detail,.Skills_detail,.Project_detail,.Summary_detail button{
+    padding:20px;
+}
+img{
+    height:200px;
+    width:200px;
+}
+.Profile_photo{
+    height:200px;
+    width:200px;
+    /* border: 2px solid black; */
+    /* object-fit: cover; */
+    background: url("https://www.adamanthr.com/wp-content/uploads/2016/04/dummy-man-570x570.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+    /* transform: scale(0.8); */
+}
+.header_deatail {
+    height:100%;
+}
+.header_data,.experience_data,.education_data,.skill_data,.project_data{
+    display: flex;
+    flex-wrap: wrap;
+    /* height:100%; */
+    justify-content: space-between;
+}
+/* .experience_data{
+    overflow: scroll;
+    height:100vh;
+} */
+.header_data_item,.experience_data_item,.education_data_item,.skill_data_item,.project_data_item{
+    width:45%;
+    height:70px;
+    margin:10px;
+}
+.header_data_item input,.experience_data_item input,.education_data_item input,.skill_data_item input,.project_data_item input{
+    width:100%;
+    height:60%;
+}
+.header_data_item label,.experience_data_item label,.education_data_item label,.skill_data_item label,.project_data_item label{
+    height:30%;
+    /* margin:10px;
+    padding:10px; */
+}
+.header_data_inners{
+    display: flex;
+    justify-content: space-between;
+}
+.header_data_item_inner{
+width:48%;
+}
+
+
+
+/* right_right */
+.right_right{
+    width:60%;
+    display:flex;
+    padding: 3% 0 0 0 ;
+    /* height:97%; */
+    overflow: scroll;
+    /* background-color: blue; */
+}
+.rrleft{
+    padding:2%;
+    width:37%;
+    background-color: #EEE9DF;
+    /* height:100%; */
+}
+.rrleft .Profile_photo{
+    margin: 10px auto;
+}
+.rrright{
+    /* background-color: blue; */
+    width:57.5%;
+    margin:0 0 0 2.5%;
+    /* height:100% */
+}
+
+.projectdescription1,.projectdescription2,.projectdescription3,.project_data_items{
+    width:100%;
+}
+.ed_data_items{
+    margin:30px 0;
+    line-height: 0.3;
+}
+.summarylname,.summaryfname{
+    font-size: 35px;
+}
+.project_data_items h3,.experience_datas h3{
+    margin:7px 0;
+}
+.experience_datas p{
+    margin:3px 0;
+}
+textarea{
+    width:100%;
+}
+.bound{
+    display: flex;
+    justify-content: space-between;
+    padding:15px;
+}
+.prev{
+    padding:15px 35px;
+    border-radius: 50px;
+    outline: none;
+    border: 1px solid black;
+    background-color: white;
+}

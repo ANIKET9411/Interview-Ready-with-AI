@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <nav>
+                <h1>Resume <br> Builder.</h1>
+            </nav>
+            <div class="option_list">
+                <button class="header">Header</button>
+                <br>
+                <button class="experience">Experience</button>
+                <br>
+                <button class="education">Education</button>
+                <br>
+                <button class="skills">Skills</button>
+                <br>
+                <button class="summary">Summary</button>
+                <br>
+                <button class="projects">Projects</button>
+                <br>
+                <button class="preview">Preview</button>
+            </div>
+            <button id="downloadbtn">
+                Download
+            </button>
+            <button id="printbtn">
+                Print Now
+            </button>
+            <button class="press">Get Jobs</button>
+            <button>
+                Get Projects
+            </button>
+        </div>
+        <div class="right">
+            <div class="right_left">
+                <div class="header_detail">
+                    <h2>Let’s start with your header</h2>
+                    <p>Include your full name and at least one way for employers to reach you.</p>
+                    <span class="P_photo"></span>
+                    <button class="add_photo">Add Photo</button>
+                    <input type="file" class="file" style="display: none;">
+                    <br>
+                    <div class="header_data">
+                        <div class="header_data_item">
+
+                            <label for="FirstName">Firstname</label>
+                            <br>
+                            <input type="text" class="firstname"><br>
+                        </div>
+                        <div class="header_data_item">
+
+                            <label for="FirstName">Lastname</label>
+                            <br>
+                            <input type="text" class="lastname"><br>
+                        </div>
+                        <div class="header_data_item">
+
+                            <label for="FirstName">City</label>
+                            <br>
+                            <input type="text" class="headcity"><br>
+                        </div>
+                        <div class="header_data_item header_data_inners">
+                            <div class="header_data_item_inner">
+                                <label for="FirstName">Country</label>
+                                <br>
+                                <input type="text" class="headcountry"><br>
+                            </div>
+                            <div class="header_data_item_inner">
+                                <label for="FirstName">Pincode</label>
+                                <br>
+                                <input type="text" class="headpincode"><br>
+                            </div>
+                        </div>
+                        <div class="header_data_item">
+
+                            <label for="FirstName">Phone</label>
+                            <br>
+                            <input type="number" class="headphone"><br>
+                        </div>
+                        <div class="header_data_item">
+
+                            <label for="FirstName">Email</label>
+                            <br>
+                            <input type="text" class="heademail">
+                        </div>
+                    </div>
+                    <button class="prev" onclick="movenext()">Continue</button>
+
+                </div>
+                <div class="experience_detail">
+                    <h2>Let’s work on your experience</h2>
+                    <p>Start with your most recent job first.</p>
+                    <div class="experience_data_upper">
+                        <h2>EXPERIENCE 1</h2>
+                        <div class="experience_data">
+                            <div class="experience_data_item">
+
+                                <label>JOB TITLE</label>
+                                <br>
+                                <input type="text" class="job_title1"><br>
+                            </div>
+                            <div class="experience_data_item">
+
+                                <label>EMPLOYER</label>
+                                <br>
+                                <input type="text" class="employer1"><br>
+                            </div>
+                            <div class="experience_data_item">
+
+                                <label>CITY</label>
+                                <br>
+                                <input type="text" class="expcity1"><br>
+                            </div>
+                            <div class="experience_data_item">
+
+                                <label>COUNTRY</label>
+                                <br>
+                                <input type="text" class="expcountry1"><br>
+                            </div>
+                            <div class="experience_data_item">
+
+                                <label>START DATE</label>
+                                <br>
+                                <input type="date" class="expstart1"><br>
+                            </div>
+                            <div class="experience_data_item">
+
+                                <label>END DATE</label>
+                                <br>
+                                <input type="date" class="expend1"><br>
+                            </div>
+                        </div>
+                        <h2>EXPERIENCE 2</h2>
+                        <div class="experience_data">
+                            <div class="experience_data_item">
+
+                                <label>JOB TITLE</label>
+                                <br>
+                                <input type="text" class="job_title2" for="jobtitle"><br>
+                            </div>
+                            <div class="experience_data_item">
+
+                                <label>EMPLOYER</label>
+                                <br>
+                                <input type="text" class="employer2"><br>
+                            </div>
+                            <div class="experience_data_item">
+
+                                <label>CITY</label>
+                                <br>
+                                <input type="text" class="expcity2"><br>
+                            </div>
+                            <div class="experience_data_item">
+
+                                <label>COUNTRY</label>
+                                <br>
+                                <input type="text" class="expcountry2"><br>
+                            </div>
+                            <div class="experience_data_item">
+
+                                <label>START DATE</label>
+                                <br>
+                                <input type="date" class="expstart2"><br>
+                            </div>
+                            <div class="experience_data_item">
+
+                                <label>END DATE</label>
+                                <br>
+                                <input type="date" class="expend2"><br>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <button class="add_experience">
+                        +
+                    </button> -->
+                    <div class="bound">
+                        <button class="prev" onclick="moveprev()">Back</button>
+                        <button class="prev" onclick="movenext()">Continue</button>
+                    </div>
+                </div>
+                <div class="Education_detail">
+                    <h2>Tell us about your education</h2>
+                    <p>Tell us about any colleges, vocational programs, or training courses you took. Even if you didn’t
+                        finish, it’s important to list them.</p>
+                    <div class="education_data_upper">
+                        <h2>EDUCATION 1</h2>
+                        <div class="education_data">
+                            <div class="education_data_item">
+
+                                <label>SCHOOL</label>
+                                <br>
+                                <input type="text" class="school1"><br>
+                            </div>
+                            <div class="education_data_item">
+
+                                <label>DEGREE</label>
+                                <br>
+                                <input type="text" class="degree1"><br>
+                            </div>
+                            <div class="education_data_item">
+
+                                <label>CITY</label>
+                                <br>
+                                <input type="text" class="educity1"><br>
+                            </div>
+                            <div class="education_data_item">
+
+                                <label>PERCENTAGE</label>
+                                <br>
+                                <input type="number" class="percentage1"><br>
+                            </div>
+                            <div class="education_data_item">
+
+                                <label>START DATE</label>
+                                <br>
+                                <input type="date" class="edustart1"><br>
+                            </div>
+                            <div class="education_data_item">
+
+                                <label>END DATE</label>
+                                <br>
+                                <input type="date" class="eduend1"><br>
+                            </div>
+                        </div>
+                        <h2>EDUCATION 2</h2>
+                        <div class="education_data">
+                            <div class="education_data_item">
+
+                                <label>SCHOOL</label>
+                                <br>
+                                <input type="text" class="school2"><br>
+                            </div>
+                            <div class="education_data_item">
+
+                                <label>DEGREE</label>
+                                <br>
+                                <input type="text" class="degree2"><br>
+                            </div>
+                            <div class="education_data_item">
+
+                                <label>CITY</label>
+                                <br>
+                                <input type="text" class="educity2"><br>
+                            </div>
+                            <div class="education_data_item">
+
+                                <label>PERCENTAGE</label>
+                                <br>
+                                <input type="number" class="percentage2"><br>
+                            </div>
+                            <div class="education_data_item">
+
+                                <label>START DATE</label>
+                                <br>
+                                <input type="date" class="edustart2"><br>
+                            </div>
+                            <div class="education_data_item">
+
+                                <label>END DATE</label>
+                                <br>
+                                <input type="date" class="eduend2"><br>
+                            </div>
+                        </div>
+                        <h2>EDUCATION 3</h2>
+                        <div class="education_data">
+                            <div class="education_data_item">
+
+                                <label>SCHOOL</label>
+                                <br>
+                                <input type="text" class="school3"><br>
+                            </div>
+                            <div class="education_data_item">
+
+                                <label>DEGREE</label>
+                                <br>
+                                <input type="text" class="degree3"><br>
+                            </div>
+                            <div class="education_data_item">
+
+                                <label>CITY</label>
+                                <br>
+                                <input type="text" class="educity3"><br>
+                            </div>
+                            <div class="education_data_item">
+
+                                <label>PERCENTAGE</label>
+                                <br>
+                                <input type="number" class="percentage3"><br>
+                            </div>
+                            <div class="education_data_item">
+
+                                <label>START DATE</label>
+                                <br>
+                                <input type="date" class="edustart3"><br>
+                            </div>
+                            <div class="education_data_item">
+
+                                <label>END DATE</label>
+                                <br>
+                                <input type="date" class="eduend3"><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bound">
+                        <button class="prev" onclick="moveprev()">Back</button>
+                        <button class="prev" onclick="movenext()">Continue</button>
+                    </div>
+                </div>
+                <div class="Skills_detail">
+                    <h2>Let’s pick your top skills</h2>
+                    <div class="skill_data">
+                        <div class="skill_data_item">
+                            <label>Skill1</label>
+                            <input type="text" class="skill1">
+                        </div>
+                        <div class="skill_data_item">
+                            <label>Skill2</label>
+                            <input type="text" class="skill2">
+                        </div>
+                        <div class="skill_data_item">
+                            <label>Skill3</label>
+                            <input type="text" class="skill3">
+                        </div>
+                        <div class="skill_data_item">
+                            <label>Skill4</label>
+                            <input type="text" class="skill4">
+                        </div>
+                        <div class="skill_data_item">
+                            <label>Skill5</label>
+                            <input type="text" class="skill5">
+                        </div>
+                        <div class="skill_data_item">
+                            <label>Skill6</label>
+                            <input type="text" class="skill6">
+                        </div>
+                    </div>
+                    <div class="bound">
+                        <button class="prev" onclick="moveprev()">Back</button>
+                        <button class="prev" onclick="movenext()">Continue</button>
+                    </div>
+                </div>
+                <div class="Summary_detail">
+                    <h2>Almost done! Let’s finish with a strong summary
+                    </h2>
+                    <textarea name="" id="" cols="30" rows="20" class="content_summary"></textarea>
+                    <div class="bound">
+                        <button class="prev" onclick="moveprev()">Back</button>
+                        <button class="prev" onclick="movenext()">Continue</button>
+                    </div>
+
+                </div>
+                <div class="Project_detail">
+                    <h2>Let’s start with you projects</h2>
+                    <h2>PROJECT 1</h2>
+                    <div class="project_data">
+                        <div class="project_data_item">
+                            <label>PROJECT NAME</label>
+                            <input type="text" class="proname1">
+                        </div>
+                        <div class="project_data_item">
+                            <label>PROJECT LINK</label>
+                            <input type="text" class="prolink1">
+                        </div>
+                        <div class="project_data_item">
+                            <label>PROJECT DESCRIPTION</label>
+                            <input type="text" class="prodesc1">
+                        </div>
+                    </div>
+                    <h2>PROJECT 2</h2>
+                    <div class="project_data">
+                        <div class="project_data_item">
+                            <label>PROJECT NAME</label>
+                            <input type="text" class="proname2">
+                        </div>
+                        <div class="project_data_item">
+                            <label>PROJECT LINK</label>
+                            <input type="text" class="prolink2">
+                        </div>
+                        <div class="project_data_item">
+                            <label>PROJECT DESCRIPTION</label>
+                            <input type="text" class="prodesc2">
+                        </div>
+                    </div>
+                    <h2>PROJECT 3</h2>
+                    <div class="project_data">
+                        <div class="project_data_item">
+                            <label>PROJECT NAME</label>
+                            <input type="text" class="proname3">
+                        </div>
+                        <div class="project_data_item">
+                            <label>PROJECT LINK</label>
+                            <input type="text" class="prolink3">
+                        </div>
+                        <div class="project_data_item">
+                            <label>PROJECT DESCRIPTION</label>
+                            <input type="text" class="prodesc3">
+                        </div>
+                    </div>
+                    <div class="bound">
+                        <button class="prev" onclick="moveprev()">Back</button>
+                        <button class="prev" onclick="movenext()">Continue</button>
+                    </div>
+
+                </div>
+                <div class="Jobs_recommended">
+                    <h1>Jobs Recommended based on your skills</h1>
+                </div>
+            </div>
+            <div class="right_right">
+                <div class="rrleft">
+                    <div class="Profile_photo"></div>
+                    <h2>CONTACT</h2>
+                    <div class="contact_data">
+                        <span class="cityhead"></span>
+                        <span class="countryhead"></span>
+                        <span class="pin"></span>
+                        <div class="phone"></div>
+                        <div class="email"></div>
+                    </div>
+                    <h2>SKILLS</h2>
+                    <div class="skills_data">
+                        <div class="skilldata1"></div>
+                        <div class="skilldata2"></div>
+                        <div class="skilldata3"></div>
+                        <div class="skilldata4"></div>
+                        <div class="skilldata5"></div>
+                        <div class="skilldata6"></div>
+                    </div>
+                </div>
+                <div class="rrright">
+                    <div class="summary_datas">
+                        <b class="summaryfname"></b><b class="summarylname"></b>
+                        <h2 class="designation"></h2>
+                        <div class="sum_content"></div>
+                    </div>
+                    <!-- <h2>ACHEIVEMENTS</h2>
+                    <div class="achievement_datas"></div> -->
+                    <h2>EDUCATIONS</h2>
+                    <div class="education_datas">
+                        <div class="ed_data_items">
+                            <b class="edstart1"></b><b class="edend1"></b>
+                            <h3 class="edDegree1"></h3>
+                            <span class="edschool1"></span> <span class="edcity1"></span>
+                            <h3 class="edpercentage1"></h3>
+                        </div>
+                        <div class="ed_data_items">
+                            <b class="edstart2"></b><b class="edend2"></b>
+                            <h3 class="edDegree2"></h3>
+                            <span class="edschool2"></span> <span class="edcity2"></span>
+                            <h3 class="edpercentage2"></h3>
+                        </div>
+                        <div class="ed_data_items">
+                            <b class="edstart3"></b><b class="edend3"></b>
+                            <h3 class="edDegree3"></h3>
+                            <span class="edschool3"></span> <span class="edcity3"></span>
+                            <h3 class="edpercentage3"></h3>
+                        </div>
+                    </div>
+                    <h2>EXPERIENCE</h2>
+                    <div class="experience_datas">
+                        <h3 class="exemployer1"></h3>
+                        <p class="exjobtitle1"></p>
+                        <span class="excity1"></span><span class="excountry1"></span>
+                        <b class="exstart1"></b><b class="exend1"></b>
+                        <h3 class="exemployer2"></h3>
+                        <p class="exjobtitle2"></p>
+                        <span class="excity2"></span><span class="excountry2"></span>
+                        <b class="exstart2"></b><b class="exend2"></b>
+                    </div>
+                    <h2>PROJECT</h2>
+                    <div class="project_datas">
+                        <div class="project_data_items">
+                            <h3 class="projectname1"></h3>
+                            <div class="projectdescription1"></div>
+                            <div class="projectlink1"></div>
+                        </div>
+                        <div class="project_data_items">
+                            <h3 class="projectname2"></h3>
+                            <div class="projectdescription2"></div>
+                            <div class="projectlink2"></div>
+                        </div>
+                        <div class="project_data_items">
+                            <h3 class="projectname3"></h3>
+                            <div class="projectdescription3"></div>
+                            <div class="projectlink3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
