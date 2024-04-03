@@ -32,8 +32,17 @@ header.addEventListener('click',()=>{
     
     R_left.appendChild(header_detail);
     R_left.style.display="block";
-    document.querySelector(".main_right_right").style.width="60%";
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
+    if (mediaQuery.matches)
+    {
+        document.querySelector(".main_right_right").style.width="100%";
+    }
+    else{
+        document.querySelector(".main_right_right").style.width="60%";
+    }
+    
 });
+
 let scr;
 experience.addEventListener('click',()=>{
     count=1;
@@ -41,7 +50,14 @@ experience.addEventListener('click',()=>{
     experience_detail.style.display="block";
     R_left.appendChild(experience_detail);
     R_left.style.display="block";
-    document.querySelector(".main_right_right").style.width="60%";
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
+    if (mediaQuery.matches)
+    {
+        document.querySelector(".main_right_right").style.width="100%";
+    }
+    else{
+        document.querySelector(".main_right_right").style.width="60%";
+    }
 });
 education.addEventListener('click',()=>{
     count=2;
@@ -49,7 +65,14 @@ education.addEventListener('click',()=>{
     Education_detail.style.display="block";
     R_left.appendChild(Education_detail);
     R_left.style.display="block";
-    document.querySelector(".main_right_right").style.width="60%";
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
+    if (mediaQuery.matches)
+    {
+        document.querySelector(".main_right_right").style.width="100%";
+    }
+    else{
+        document.querySelector(".main_right_right").style.width="60%";
+    }
 });
 skills.addEventListener('click',()=>{
     count=3;
@@ -57,7 +80,14 @@ skills.addEventListener('click',()=>{
     Skills_detail.style.display="block";
     R_left.appendChild(Skills_detail);
     R_left.style.display="block";
-    document.querySelector(".main_right_right").style.width="60%";
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
+    if (mediaQuery.matches)
+    {
+        document.querySelector(".main_right_right").style.width="100%";
+    }
+    else{
+        document.querySelector(".main_right_right").style.width="60%";
+    }
 });
 summary.addEventListener('click',()=>{
     count=4;
@@ -65,7 +95,14 @@ summary.addEventListener('click',()=>{
     Summary_detail.style.display="block";
     R_left.appendChild(Summary_detail);
     R_left.style.display="block";
-    document.querySelector(".main_right_right").style.width="60%";
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
+    if (mediaQuery.matches)
+    {
+        document.querySelector(".main_right_right").style.width="100%";
+    }
+    else{
+        document.querySelector(".main_right_right").style.width="60%";
+    }
 });
 projects.addEventListener('click',()=>{
     count=5;
@@ -73,7 +110,14 @@ projects.addEventListener('click',()=>{
     Project_detail.style.display="block";
     R_left.appendChild(Project_detail);
     R_left.style.display="block";
-    document.querySelector(".main_right_right").style.width="60%";
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
+    if (mediaQuery.matches)
+    {
+        document.querySelector(".main_right_right").style.width="100%";
+    }
+    else{
+        document.querySelector(".main_right_right").style.width="60%";
+    }
 });
 let selectedFile;
 file.addEventListener('input',(event)=>{
@@ -124,19 +168,19 @@ let email=document.querySelector('.email');
 
 
 document.querySelector(".headcity").addEventListener('input',(ele)=>{
-    cityhead.innerHTML=`<b>Address:-</b>${ele.target.value}`; 
+    cityhead.innerHTML=`<b class="mobile_contact_bold">Address:-</b><span class="mobile_contact tablet_contact">${ele.target.value}</span>`; 
 });
 document.querySelector(".headcountry").addEventListener('input',(ele)=>{
-    countryhead.innerText=`${ele.target.value}`; 
+    countryhead.innerHTML=`<span class="mobile_contact tablet_contact">${ele.target.value}</span>`; 
 });
 document.querySelector(".headpincode").addEventListener('input',(ele)=>{
-    pin.innerText=ele.target.value; 
+    pin.innerHTML=`<span class="mobile_contact tablet_contact">${ele.target.value}</span>`; 
 });
 document.querySelector(".headphone").addEventListener('input',(ele)=>{
-    phone.innerHTML=`<b>Phone:-</b> ${ele.target.value}`; 
+    phone.innerHTML=`<b class="mobile_contact_bold">Phone:-</b> <span class="mobile_contact tablet_contact">${ele.target.value}</span>`; 
 });
 document.querySelector(".heademail").addEventListener('input',(ele)=>{
-    email.innerHTML=`<b>Email:-</b> ${ele.target.value}`; 
+    email.innerHTML=`<b class="mobile_contact_bold">Email:-</b> <span class="mobile_contact tablet_contact">${ele.target.value}</span>`; 
 });
 
 // skills portion 
@@ -156,7 +200,7 @@ document.querySelector(".skill1").addEventListener('input',(ele)=>{
     }
     else{
         skilldata1.style.display="block";
-        skilldata1.innerHTML=`<li>${ele.target.value}</li>`; 
+        skilldata1.innerHTML=`<li class="mobile_contacts">${ele.target.value}</li>`; 
     }
     setTimeout(() => {
         skillset.push(document.querySelector(".skill1").value);
@@ -169,7 +213,7 @@ document.querySelector(".skill2").addEventListener('input',(ele)=>{
     }
     else{
         skilldata2.style.display="block";
-        skilldata2.innerHTML=`<li>${ele.target.value}</li>`; 
+        skilldata2.innerHTML=`<li class="mobile_contacts">${ele.target.value}</li>`; 
     }
     setTimeout(() => {
         skillset.push(document.querySelector(".skill2").value);
@@ -182,7 +226,7 @@ document.querySelector(".skill3").addEventListener('input',(ele)=>{
     }
     else{
         skilldata3.style.display="block";
-        skilldata3.innerHTML=`<li>${ele.target.value}</li>`; 
+        skilldata3.innerHTML=`<li class="mobile_contacts">${ele.target.value}</li>`; 
     }
     setTimeout(() => {
         skillset.push(document.querySelector(".skill3").value);
@@ -195,7 +239,7 @@ document.querySelector(".skill4").addEventListener('input',(ele)=>{
     }
     else{
         skilldata4.style.display="block";
-        skilldata4.innerHTML=`<li>${ele.target.value}</li>`; 
+        skilldata4.innerHTML=`<li class="mobile_contacts">${ele.target.value}</li>`; 
     } 
     setTimeout(() => {
         skillset.push(document.querySelector(".skill4").value);
@@ -208,7 +252,7 @@ document.querySelector(".skill5").addEventListener('input',(ele)=>{
     }
     else{
         skilldata5.style.display="block";
-        skilldata5.innerHTML=`<li>${ele.target.value}</li>`; 
+        skilldata5.innerHTML=`<li class="mobile_contacts">${ele.target.value}</li>`; 
     }
     setTimeout(() => {
         skillset.push(document.querySelector(".skill5").value);
@@ -221,7 +265,7 @@ document.querySelector(".skill6").addEventListener('input',(ele)=>{
     }
     else{
         skilldata6.style.display="block";
-        skilldata6.innerHTML=`<li>${ele.target.value}</li>`; 
+        skilldata6.innerHTML=`<li class="mobile_contacts">${ele.target.value}</li>`; 
     }
     setTimeout(() => {
         skillset.push(document.querySelector(".skill6").value);
@@ -250,10 +294,10 @@ document.querySelector(".expcountry1").addEventListener('input',(ele)=>{
     excountry1.innerHTML=`${ele.target.value}<br>`; 
 });
 document.querySelector(".expstart1").addEventListener('input',(ele)=>{
-    exstart1.innerText=`(${ele.target.value}) - `; 
+    exstart1.innerText=`(${ele.target.value} - `; 
 });
 document.querySelector(".expend1").addEventListener('input',(ele)=>{
-    exend1.innerText=`(${ele.target.value})`; 
+    exend1.innerText=`${ele.target.value})`; 
 });
 
 let exemployer2=document.querySelector(".exemployer2");
@@ -366,7 +410,7 @@ let summaryfname=document.querySelector(".summaryfname");
 let summarylname=document.querySelector(".summarylname");
 
 document.querySelector(".content_summary").addEventListener('input',(ele)=>{
-    sum_content.innerText=`${ele.target.value}`; 
+    sum_content.innerHTML=`<p class="mobile_contacts">${ele.target.value}</p>`; 
 });
 document.querySelector(".firstname").addEventListener('input',(ele)=>{
     summaryfname.innerText=`${ele.target.value} `; 
@@ -471,6 +515,12 @@ try {
             console.log(elem.employmentType);
             console.log(elem.description);
         })
+        const mediaQuery = window.matchMedia('(max-width: 767px)');
+        if (mediaQuery.matches)
+        {
+            document.querySelector(".main_right_left").style.width="100%";
+            document.querySelector(".main_right_right").style.width="100%";
+        }
         R_left.appendChild(Jobs_recommended);
     })
     
@@ -502,7 +552,7 @@ function enhanceskill(){
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'ae1d78a41fmsh9899d0f9a032543p18ff35jsnca4aa0db0d6a',
+            'X-RapidAPI-Key': '8179e9b7f4msh26459e568c8c34dp16ba99jsnfd23b1104681',
             'X-RapidAPI-Host': 'youtube-search14.p.rapidapi.com'
         }
     };
@@ -521,16 +571,19 @@ try {
         for(let i=0;i<3;i++)
         {
             let div=document.createElement("div");
-            div.innerHTML=`<a href=${ele[i].url}>${ele[i].url}</a>`;
-            div.style.margin="20px";
-            div.style.height="30px";
+            div.innerHTML=`<a style="display:inline-block; width:100%; overflow:hidden;" href=${ele[i].url}>${ele[i].url}</a>`;
+            div.style.margin="11px";
+            // div.style.height="30px";
+            div.style.width="100%";
             enhancement_skill.appendChild(div);
-            console.log(enhancement_skill);
         }
-        // ele.forEach((elem)=>{
-            
-            
-        // })
+        const mediaQuery = window.matchMedia('(max-width: 767px)');
+        if (mediaQuery.matches)
+        {
+            document.querySelector(".main_right_left").style.width="100%";
+            document.querySelector(".right_left").style.width="94%";
+            document.querySelector(".main_right_right").style.width="100%";
+        }
         R_left.appendChild(enhancement_skill);
     })
     
@@ -542,7 +595,7 @@ try {
 // console.log(skillset);
 const uniqueArray = [...new Set(skillset)];
 uniqueArray.forEach((ele)=>{
-    console.log(ele);
+    // console.log(ele);
     if(ele)
     {
         // console.log("done");

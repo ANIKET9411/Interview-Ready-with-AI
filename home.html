@@ -420,8 +420,12 @@
                     <div class="Jobs_recommended">
                         <h1>Jobs Recommended based on your skills</h1>
                     </div>
+                    <div class="project_recommended">
+                        <h1>Projects Based on Skills:-</h1>
+                        <div class="project_listing"></div>
+                    </div>
                     <div class="enhancement_skill">
-                        <h1>Skill Enhancement refernce links:-</h1>
+                        <h1>Skill Enhancement reference links:-</h1>
                     </div>
                 </div>
             </div>
@@ -432,27 +436,27 @@
                         <div class="Profile_photo"></div>
                         <h2>CONTACT</h2>
                         <div class="contact_data">
-                            <span class="cityhead"></span>
-                            <span class="countryhead"></span>
-                            <span class="pin"></span>
-                            <div class="phone"></div>
-                            <div class="email"></div>
+                            <span class="cityhead contact_mobile_font"></span>
+                            <span class="countryhead contact_mobile_font"></span>
+                            <span class="pin contact_mobile_font"></span>
+                            <div class="phone contact_mobile_font"></div>
+                            <div class="email contact_mobile_font"></div>
                         </div>
                         <h2>SKILLS</h2>
                         <div class="skills_data">
-                            <div class="skilldata1"></div>
-                            <div class="skilldata2"></div>
-                            <div class="skilldata3"></div>
-                            <div class="skilldata4"></div>
-                            <div class="skilldata5"></div>
-                            <div class="skilldata6"></div>
+                            <div class="skilldata1 contact_mobile_font"></div>
+                            <div class="skilldata2 contact_mobile_font"></div>
+                            <div class="skilldata3 contact_mobile_font"></div>
+                            <div class="skilldata4 contact_mobile_font"></div>
+                            <div class="skilldata5 contact_mobile_font"></div>
+                            <div class="skilldata6 contact_mobile_font"></div>
                         </div>
                     </div>
                     <div class="rrright">
                         <div class="summary_datas">
                             <b class="summaryfname"></b><b class="summarylname"></b>
                             <h2 class="designation"></h2>
-                            <div class="sum_content"></div>
+                            <div class="sum_content contact_mobile_font"></div>
                         </div>
                         <!-- <h2>ACHEIVEMENTS</h2>
                         <div class="achievement_datas"></div> -->
@@ -514,6 +518,69 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
     <script src="script.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+    <script type="module">
+        let appendprojects=document.querySelector(".project_listing");
+        let upperappenddiv=document.querySelector(".project_recommended");
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
+const API_KEY = 'AIzaSyB7qZpIEkpyFzF9BoA_DuQIhw-xi8vvfa4';
+
+        // Access your API key (see "Set up your API key" above)
+        const genAI = new GoogleGenerativeAI(API_KEY);
+        async function run(prompting_msg) {
+            // For text-only input, use the gemini-pro model
+            const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+                    console.log("aniket");
+                    const result = await model.generateContent(prompting_msg);
+                    const response = await result.response;
+    const text = response.text();
+    console.log("abhishek");
+    const md = window.markdownit();
+    const htmlMarkup = md.render(text);
+    let div2 = document.createElement("div");
+    // div1.style.color = "white";
+    // div1.style.padding = "0 10%";
+    div2.innerHTML = `${htmlMarkup}`;
+    console.log(div2);
+    // console.log(document.querySelector(".project_listing").innerHTML);
+    appendprojects.appendChild(div2);
+    upperappenddiv.style.display="block";
+    
+        
+    // console.log(response);
+                    // console.log(ele);
+                    R_left.appendChild(upperappenddiv);
+
+
+
+
+
+
+  }
+        // }
+        document.querySelector(".get_project").addEventListener('click', project_list_recommended);
+        // inputText.addEventListener('change', run);
+       function project_list_recommended(){
+        const uniqueArray = [...new Set(skillset)];
+        uniqueArray.forEach((ele)=>{
+
+
+            console.log("hello");
+               const prompt = `Project based on the Skills ${ele}`;
+               console.log(prompt);
+               run(prompt);
+       })
+       }
+
+   </script>
 </body>
 
 </html>
