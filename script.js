@@ -496,6 +496,7 @@ let enhancement_skill=document.querySelector(".enhancement_skill");
 let get_project=document.querySelector(".get_project");
 get_project.addEventListener('click',enhanceskill);
 function enhanceskill(){
+    // enhancement_skill.innerHTML="";
     let eskill=[];
     let url;
     const options = {

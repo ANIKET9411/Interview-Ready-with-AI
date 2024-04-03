@@ -77,7 +77,7 @@ img{
     background-position: left;
     /* transform: scale(0.8); */
 }
-.header_deatail {
+.header_detail {
     height:100%;
 }
 .header_data,.experience_data,.education_data,.skill_data,.project_data{
@@ -211,4 +211,37 @@ textarea{
     width:40%;
     height: 94vh;
     overflow-y: scroll;
+}
+
+/* media queries for mobile  */
+
+
+@media only screen and (240px<=width<=767px){
+    .container{
+        flex-direction: column;
+    }
+    .left{
+        width:100%;
+    }
+    .option_list{
+        display:flex;
+        overflow: scroll;
+        width:100%;
+    }
+    .right{
+        flex-direction: column;
+        width:100%;
+    }
+    .main_right_left,.main_right_right{
+        width:100%;
+        height:auto;
+        overflow:visible;
+
+    }
+    .header_data_item,.experience_data_item,.education_data_item,.skill_data_item,.project_data_item{
+        width:100%;
+    }
+    .right_right{
+        width:100%;
+    }
 }
