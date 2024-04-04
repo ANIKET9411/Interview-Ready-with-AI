@@ -5,6 +5,7 @@ body{
 nav{
     display: flex;
     padding:5vh 10%;
+    width:80%;
     justify-content: space-between;
     align-items: center;
     background-color: #212D59;
@@ -32,10 +33,13 @@ main{
 }
 main img{
 width:65vh;
+object-fit: cover;
 }
 .main_left{
+    
     margin:10vh 0 10vh 25vh;
     padding-right:4rem;
+    
     width:30%;
 }
 .main_left h1{
@@ -50,8 +54,11 @@ width:65vh;
     border-radius: 50px;
 }
 .main_right{
+    background: url("https://assets.zety.com/blobcontent/lp-exps/zty/ZTY3221/changeCV-image.png");
+    background-size: cover;
     width:40%;
     margin:5vh 10vh 0;
+    height:100%;
 }
 a{
     text-decoration: none;
@@ -71,4 +78,51 @@ form{
 }
 .signup_main_left{
     margin-top: 0;
+}
+
+/* media query for phone  */
+@media only screen and (240px<=width<=767px){
+    nav{
+       
+        flex-direction: column;
+        /* position: fixed; */
+        z-index: 5;
+    }
+    .nav_left{
+        margin-bottom: 25px;
+    }
+    main{
+        flex-direction: column-reverse;
+        width:100%;
+        height:100%;
+        padding: 0;
+    }
+    /* main img{
+        width:100%;
+    } */
+    .main_left{
+        width:92%;
+        padding: 4%;
+        margin:0;
+    }
+    .main_right{
+        /* margin-top: 20%; */
+        height:250px;
+        object-fit: cover;
+        width:100%;
+        margin:0;
+    }
+}
+@media only screen and (768px<=width<=1024px){
+    .main_left{
+        margin-left: 10vh;
+        padding: 0;
+        width:50%;
+    }
+    .main_right{
+        margin-left: 0;
+        margin-right: 0;
+        width:50%;
+        transform: scale(0.7);
+    }
 }
