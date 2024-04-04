@@ -43,8 +43,6 @@ nav h1{
     width:94%;
     min-height:94%;
     overflow: scroll-y;
-    content
-
 }
 ::-webkit-scrollbar{
     display: none;
@@ -221,7 +219,9 @@ textarea{
     height: 94vh;
     overflow-y: scroll;
 }
-
+.demo_anchor{
+    text-decoration: underline;
+}
 /* media queries for mobile  */
 
 
@@ -305,4 +305,85 @@ textarea{
         margin:9px 0;
         font-size: 4.3vw;
     }
+}
+@media only screen and (768px<=width<=1024px){
+    .container{
+        flex-direction: column;
+    }
+    .left{
+        width:100%;
+    }
+    .option_list{
+        display:flex;
+        overflow: scroll;
+        width:100%;
+    }
+.right{
+    flex-direction: row;
+    width:100%;
+}
+.main_right_left,.main_right_right{
+    width: 50%;
+}
+.right_left{
+    overflow: scroll;
+}
+.header_data_item,.experience_data_item,.education_data_item,.skill_data_item,.project_data_item{
+    width:43%;
+}
+.Profile_photo{
+    height:130px;
+width:130px;
+}
+.Profile_photo img{
+    height:100%;
+width:100%;
+}
+.mobile_contact{
+    font-size: ;
+}
+.mobile_contact_bold{
+    display: block;
+}
+/* .contact_data{
+font-size: 3rem;
+} */
+.contact_mobile_font
+{
+    font-size: 1.6vw;
+}
+.summarylname,.summaryfname{
+    font-size: 4vw;
+}
+.project_recommended,.enhancement_skill{
+    width:100%;
+}
+.right_left{
+    width:94%;
+}
+.ed_data_items{
+    line-height: 1;
+    margin: 0px 0 7px;
+}
+.ed_data_items h3{
+    margin:5px 0;
+    font-size: 2.2vw;
+}
+.experience_datas,.education_datas{
+    font-size: 2vw;
+}
+.experience_datas h3,.project_datas h3{
+    font-size:2.2vw;
+}
+
+.projectdescription1,.projectdescription2,.projectdescription3,.mobile_contacts{
+    font-size: 1.8vw;
+}
+.rrright h2{
+    margin:9px 0;
+    font-size: 2.5vw;
+}
+.new_feature{
+    margin-top: 2rem;
+}
 }

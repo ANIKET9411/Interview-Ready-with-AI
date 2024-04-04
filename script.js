@@ -429,7 +429,7 @@ document.querySelector(".proname1").addEventListener('input',(ele)=>{
     projectname1.innerText=`${ele.target.value}`; 
 });
 document.querySelector(".prolink1").addEventListener('input',(ele)=>{
-    projectlink1.innerHTML=`<a href="${ele.target.value}">DEMO</a>`; 
+    projectlink1.innerHTML=`<a class="demo_anchor" href="${ele.target.value}">DEMO</a>`; 
 });
 document.querySelector(".prodesc1").addEventListener('input',(ele)=>{
     projectdescription1.innerText=`${ele.target.value}`; 
@@ -442,7 +442,7 @@ document.querySelector(".proname2").addEventListener('input',(ele)=>{
     projectname2.innerText=`${ele.target.value}`; 
 });
 document.querySelector(".prolink2").addEventListener('input',(ele)=>{
-    projectlink2.innerHTML=`<a href="${ele.target.value}">DEMO</a>`; 
+    projectlink2.innerHTML=`<a class="demo_anchor" href="${ele.target.value}">DEMO</a>`; 
 });
 document.querySelector(".prodesc2").addEventListener('input',(ele)=>{
     projectdescription2.innerText=`${ele.target.value}`; 
@@ -456,7 +456,7 @@ document.querySelector(".proname3").addEventListener('input',(ele)=>{
     projectname3.innerText=`${ele.target.value}`; 
 });
 document.querySelector(".prolink3").addEventListener('input',(ele)=>{
-    projectlink3.innerHTML=`<a href="${ele.target.value}">DEMO</a>`; 
+    projectlink3.innerHTML=`<a class="demo_anchor" href="${ele.target.value}">DEMO</a>`; 
 });
 document.querySelector(".prodesc3").addEventListener('input',(ele)=>{
     projectdescription3.innerText=`${ele.target.value}`; 
@@ -718,7 +718,9 @@ if(count==6)
 }
 document.querySelector(".preview").addEventListener('click',()=>{
     R_left.style.display="none";
-    document.querySelector(".main_right_right").style.width="100%";
-    document.querySelector(".main_right_right").style.margin="0 auto";
+    
+        document.querySelector(".main_right_right").style.width="100%";
+        document.querySelector(".main_right_right").style.margin="0 auto";
+   
     // R_right.style.backgroundColor="red";
 })
