@@ -634,7 +634,25 @@ function arrangewidth(){
 }
 // print pdf 
 document.getElementById('printbtn').addEventListener('click', function() {
-    window.print();
+    // window.print();
+
+
+    var divContent = document.querySelector(".main_right_right").innerHTML;
+
+        // Create a new window
+        var printWindow = window.open('', '', 'height=400,width=800');
+
+        // Write the HTML content to the new window
+        printWindow.document.write('<html><head><title>Print</title><link rel="stylesheet" href="style.css"></head><body>');
+        printWindow.document.write(divContent);
+        printWindow.document.write('</body></html>');
+
+        // Print the contents of the new window
+        printWindow.document.close(); // Close the document to ensure proper printing in some browsers
+        // printWindow.close();
+        printWindow.print();
+
+        // Close the new window after printing
   });
   
 
