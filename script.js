@@ -613,10 +613,11 @@ printPdf.addEventListener("click", ()=>{
     const element = document.querySelector('.right_right');
     element.style.width="100%";
     element.style.margin="0 auto";
+    let downname=document.querySelector(".firstname").value;
 html2pdf(element, {
     margin: 10,
-    filename: "resume.pdf",
-    image: { type: "jpeg", quality: 0.98 },
+    filename: `${downname}_resume.pdf`,
+    image: { type: "jpeg", quality: 1 },
     html2canvas: { scale: 2 },
     jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
   });
@@ -655,26 +656,6 @@ document.getElementById('printbtn').addEventListener('click', function() {
         // Close the new window after printing
   });
   
-
-// Get references to the left and right divs
-// const leftDiv = document.querySelector('.rrleft');
-// const rightDiv = document.querySelector('.rrright');
-
-// // Function to synchronize the height of the divs
-// function syncDivHeights() {
-//     console.log(rightDiv.clientHeight);
-//   const rightHeight = rightDiv.clientHeight;
-//   leftDiv.style.height = rightHeight + 'px';
-// }
-
-// // Example: Increase the height of the left div
-// // rightDiv.style.minHeight = '20%';
-
-// // Call the function to synchronize the height after modifying the left div
-// syncDivHeights();
-
-
-// let displaynext=[{header_detail},{experience_detail},{Education_detail}];
 function movenext(){
     count++;
     turn();
@@ -729,7 +710,7 @@ if(count==5)
 }
 if(count==6)
 {
-    R_left.innerHTML="Click finalise to preview the resume";
+    R_left.innerHTML=`<h1 style="margin-top:10%;">Click preview to view the resume</h1>`;
     projects.style.color="white";
     projects.style.backgroundColor="green";
 }

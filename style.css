@@ -5,6 +5,9 @@ body{
     height:100vh;
     /* background-color: pink; */
 }
+button{
+    cursor: pointer;
+}
 .container{
     width:100%;
     display: flex;
@@ -126,7 +129,7 @@ width:48%;
     width:100%;
     display:flex;
     padding: 3% 0;
-    /* height:97%; */
+    /* min-height:97%; */
     overflow: scroll;
     /* background-color: blue; */
 }
@@ -134,7 +137,7 @@ width:48%;
     padding:2%;
     width:37%;
     background-color: #EEE9DF;
-    min-height: 94vh;
+    min-height: 96vh;
     /* height:100%; */
 }
 .rrleft .Profile_photo{
